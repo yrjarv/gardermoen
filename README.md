@@ -95,7 +95,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Y. Vederhus - norway.yv@gmail.com
+norway.yv@gmail.com
 
 Project Link: [https://github.com/norway-yv/gardermoen-website-it1](https://github.com/norway-yv/gardermoen-website-it1)
 
