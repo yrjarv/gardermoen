@@ -22,6 +22,7 @@ function makeHeader() {
           <li><a href='./hjem.html'>Hjem</a></li>\
           <li><a href='./direkteruter.html'>Direkteruter</a></li>\
           <li><a href='./transport.html'>Transport hit</a></li>\
+          <li><a href='./flyselskap.html'>Flyselskap</a></li>\
           <li><a href='./om.html'>Om oss</a></li>\
         </ul>\
         <div id='langugages'>\
@@ -37,6 +38,7 @@ function makeHeader() {
           <li><a href='./hjem.html'>Home</a></li>\
           <li><a href='./direkteruter.html'>Direct routes</a></li>\
           <li><a href='./transport.html'>Transport here</a></li>\
+          <li><a href='./flyselskap.html'>Airlines</a></li>\
           <li><a href='./om.html'>About us</a></li>\
         </ul>\
         <div id='langugages'>\
