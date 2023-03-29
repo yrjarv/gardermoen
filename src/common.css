@@ -1,0 +1,20 @@
+header {
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  top: 0;
+}
+
+header > ul {
+  display: flex;
+  flex-direction: row;
+  width: 60vw;
+  height: 7.5vh;
+  list-style: none;
+  background-color: var(--avinor-grey);
+  color: white;
+}
+
+header > ul > li {
+  width: 18.75vw;
+}
