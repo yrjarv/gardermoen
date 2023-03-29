@@ -1,8 +1,18 @@
+html {
+  font-family: Arial, Helvetica, sans-serif
+}
+
+/*HEADER STYLE START*/
 header {
   display: flex;
   flex-direction: row;
   position: sticky;
   top: 0;
+  background-color: var(--avinor-grey);
+  padding: 1vh 1vw;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 1vh;
 }
 
 header > ul {
@@ -11,10 +21,35 @@ header > ul {
   width: 60vw;
   height: 7.5vh;
   list-style: none;
-  background-color: var(--avinor-grey);
   color: white;
+  font-size: 3vh;
+  gap: 1.5vw;
+  margin: 1vw;
+  line-height: 7.5vh;
+}
+
+header > img {
+  
+  height: 7.5vh;
 }
 
 header > ul > li {
   width: 18.75vw;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0.1%;
 }
+
+header > ul > li:hover {
+  background-color: #505050;
+}
+
+header > ul > li > a {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+/*HEADER STYLE END*/
+/*FOOTER STYLE START*/
+
+/*FOOTER STYLE END*/

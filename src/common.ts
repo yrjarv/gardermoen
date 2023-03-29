@@ -2,8 +2,11 @@
  * Runs from body onLoad in all HTML documents. Starts functions to make common elements
  */
 function makeCommon(): void {
+  if(!localStorage.language) {localStorage.language = "no"} // Default language is Norwegian
+
   $("head").append("<link rel='stylesheet' href='./common.css' type='text/css'>");
   $("head").append("<link rel='stylesheet' href='./colours.css' type='text/css'>");
+  $("head").append("<link rel='icon' href='./images/favicon.ico' type='icon'>")
   makeHeader();
   makeFooter();
 }
@@ -11,23 +14,51 @@ function makeCommon(): void {
  * Makes the header of the document
  */
 function makeHeader(): void {
-  $('body').prepend(
-    "<header>" +
-      "<img src="
-      "<ul>" +
-        "<li>Hjem</li>" +
-        "<li>Direkteruter</li>" +
-        "<li>Transport hit</li>" +
-        "<li>Om oss</li>" +
-      "</ul>" +
-    "</header>"
-  )
+  if (localStorage.language === "no") {
+    $("body").prepend(
+      "<header>\
+        <img src='./images/gardermoen-logo.png' alt='Logo' id='logo'>\
+        <ul>\
+          <li><a href='./hjem.html'>Hjem</a></li>\
+          <li><a href='./direkteruter.html'>Direkteruter</a></li>\
+          <li><a href='./transport.html'>Transport hit</a></li>\
+          <li><a href='./om.html'>Om oss</a></li>\
+        </ul>\
+        <div id='langugages'>\
+          <img src='./images/flag-norway.png' alt='Norsk' id='flagNorway'>\
+          <img src='./images/flag-english.png' alt='English' id='flagEnglish'>\
+        </div>\
+      </header>"
+    )
+  }
+  else if (localStorage.language === "en") {
+    $("body").prepend(
+      "<header>\
+        <img src='./images/gardermoen-logo.png' alt='Logo' id='logo'>\
+        <ul>\
+          <li><a href='./hjem.html'>Home</a></li>\
+          <li><a href='./direkteruter.html'>Direct routes</a></li>\
+          <li><a href='./transport.html'>Transport here</a></li>\
+          <li><a href='./om.html'>About us</a></li>\
+        </ul>\
+        <div id='langugages'>\
+          <img src='./images/flag-norway.png' alt='Norsk' id='flagNorway'>\
+          <img src='./images/flag-english.png' alt='English' id='flagEnglish'>\
+        </div>\
+      </header>"
+    )
+  }
+  else {localStorage.language = "no"}
+
+  $("#flagNorway").on("click", function() {localStorage.language = "no"; window.location.reload()})
+  $("#flagEnglish").on("click", function() {localStorage.language = "en"; window.location.reload()})
 }
 /**
  * Makes the footer of the document
  */
 function makeFooter(): void {
   $("body").append(
-
+    "<footer>\
+    </footer>"
   )
 }
