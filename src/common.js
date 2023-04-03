@@ -16,39 +16,32 @@ function makeCommon() {
  */
 function makeHeader() {
     if (localStorage.language === "no") {
-        $("body").prepend("<header>\
-        <img src='./images/gardermoen-logo.png' alt='Logo' id='logo'>\
-        <ul>\
-          <li><a href='./hjem.html'>Hjem</a></li>\
-          <li><a href='./direkteruter.html'>Direkteruter</a></li>\
-          <li><a href='./transport.html'>Transport hit</a></li>\
-          <li><a href='./flyselskap.html'>Flyselskap</a></li>\
-          <li><a href='./om.html'>Om oss</a></li>\
-        </ul>\
-        <div id='langugages'>\
-          <img src='./images/flag-norway.png' alt='Norsk' id='flagNorway'>\
-          <img src='./images/flag-english.png' alt='English' id='flagEnglish'>\
-        </div>\
-      </header>");
+        $("header").html("<img src='./images/gardermoen-logo.png' alt='Logo' id='logo'>\
+      <ul>\
+        <li><a href='./hjem.html'>Hjem</a></li>\
+        <li><a href='./direkteruter.html'>Direkteruter</a></li>\
+        <li><a href='./transport.html'>Transport til/fra</a></li>\
+        <li><a href='./flyselskap.html'>Flyselskap</a></li>\
+        <li><a href='./om.html'>Om oss</a></li>\
+      </ul>\
+      <div id='langugages'>\
+        <img src='./images/flag-norway.png' alt='Norsk' id='flagNorway'>\
+        <img src='./images/flag-english.png' alt='English' id='flagEnglish'>\
+      </div>");
     }
     else if (localStorage.language === "en") {
-        $("body").prepend("<header>\
-        <img src='./images/gardermoen-logo.png' alt='Logo' id='logo'>\
-        <ul>\
-          <li><a href='./hjem.html'>Home</a></li>\
-          <li><a href='./direkteruter.html'>Direct routes</a></li>\
-          <li><a href='./transport.html'>Transport here</a></li>\
-          <li><a href='./flyselskap.html'>Airlines</a></li>\
-          <li><a href='./om.html'>About us</a></li>\
-        </ul>\
-        <div id='langugages'>\
-          <img src='./images/flag-norway.png' alt='Norsk' id='flagNorway'>\
-          <img src='./images/flag-english.png' alt='English' id='flagEnglish'>\
-        </div>\
-      </header>");
-    }
-    else {
-        localStorage.language = "no";
+        $("header").html("<img src='./images/gardermoen-logo.png' alt='Logo' id='logo'>\
+      <ul>\
+        <li><a href='./hjem.html'>Home</a></li>\
+        <li><a href='./direkteruter.html'>Direct routes</a></li>\
+        <li><a href='./transport.html'>Transport to/from</a></li>\
+        <li><a href='./flyselskap.html'>Airlines</a></li>\
+        <li><a href='./om.html'>About us</a></li>\
+      </ul>\
+      <div id='langugages'>\
+        <img src='./images/flag-norway.png' alt='Norsk' id='flagNorway'>\
+        <img src='./images/flag-english.png' alt='English' id='flagEnglish'>\
+      </div>");
     }
     $("#flagNorway").on("click", function () { localStorage.language = "no"; window.location.reload(); });
     $("#flagEnglish").on("click", function () { localStorage.language = "en"; window.location.reload(); });
@@ -57,6 +50,11 @@ function makeHeader() {
  * Makes the footer of the document
  */
 function makeFooter() {
-    $("body").append("<footer>\
-    </footer>");
+    $("footer").html("<div id='left'>\
+      <img src='./images/gardermoen-logo.png'>\
+      <h2>Kontakt oss</h2>\
+      <p><a href='https://tilbakemelding.avinor.no/'>Gi oss din tilbakemelding eller still et spørsmål</a></p>\
+      <p>Telefon: <a href='tlf:67030000'>67 03 00 00</a></p>\
+      <h3>Besøksadresse:</h3>\
+      <p>Edvard Munchs Veg<br>2061 Gardermoen</p>");
 }
