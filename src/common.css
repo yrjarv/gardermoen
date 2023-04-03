@@ -18,7 +18,7 @@ header {
 header > ul {
   display: flex;
   flex-direction: row;
-  width: 60vw;
+  width: 75vw;
   height: 7.5vh;
   list-style: none;
   color: white;
