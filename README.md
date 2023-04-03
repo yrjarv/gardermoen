@@ -12,7 +12,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/norway-yv/gardermoen-website-it1">
-    <img src="repo-favicon.png" alt="Logo" width="80" height="80">
+    <img src="./src/images/repo-favicon.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Gardermoen Website (IT1)</h3>
@@ -83,7 +83,7 @@ This will compile all the .ts files to .js files, all of which are linked to in 
 - [ ] Flight companies
 - [ ] About us
 
-See the [open issues](https://github.com/norway-yv/gardermoen-website.it1/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/norway-yv/gardermoen-website-it1/issues) for a full list of proposed features (and known issues).
 
 
 
