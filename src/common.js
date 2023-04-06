@@ -30,7 +30,7 @@ function makeHeader() {
       </div>");
     }
     else if (localStorage.language === "en") {
-        $("header").html("<img src='./images/gardermoen-logo.png' alt='Logo' id='logo'>\
+        $("header").html("<img src='./images/gardermoen-logo.png' alt='Logo'>\
       <ul>\
         <li><a href='./hjem.html'>Home</a></li>\
         <li><a href='./direkteruter.html'>Direct routes</a></li>\
@@ -51,10 +51,16 @@ function makeHeader() {
  */
 function makeFooter() {
     $("footer").html("<div id='left'>\
-      <img src='./images/gardermoen-logo.png'>\
+      <img src='./images/gardermoen-logo.png' alt='Logo'>\
+      <h3>Besøksadresse:</h3>\
+      <p>Edvard Munchs Veg<br>2061 Gardermoen</p>\
+    </div>\
+    <div id='middle'>\
       <h2>Kontakt oss</h2>\
       <p><a href='https://tilbakemelding.avinor.no/'>Gi oss din tilbakemelding eller still et spørsmål</a></p>\
       <p>Telefon: <a href='tlf:67030000'>67 03 00 00</a></p>\
-      <h3>Besøksadresse:</h3>\
-      <p>Edvard Munchs Veg<br>2061 Gardermoen</p>");
+    </div>\
+    <div id='right'>\
+      <iframe src='https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Edvard%20Munchs%20veg%20Gardermoen+(Oslo%20Lufthavn)&amp;t=&amp;z=9&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'></iframe>\
+    <div>");
 }

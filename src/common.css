@@ -2,6 +2,9 @@ html {
   font-family: Arial, Helvetica, sans-serif
 }
 
+a:link {color: var(--link-new)}
+a:visited {color: var(--link-visited)}
+
 /*HEADER STYLE START*/
 header {
   display: flex;
@@ -50,5 +53,16 @@ header > ul > li > a {
 }
 /*HEADER STYLE END*/
 /*FOOTER STYLE START*/
+footer {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--avinor-grey);
+  padding: 5%;
+  color: white;
+  justify-content: space-around;
+}
 
+footer > #left > img {
+  height: 7.5vh;
+}
 /*FOOTER STYLE END*/
