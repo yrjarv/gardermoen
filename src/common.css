@@ -2,9 +2,6 @@ html {
   font-family: Arial, Helvetica, sans-serif
 }
 
-a:link {color: var(--link-new)}
-a:visited {color: var(--link-visited)}
-
 /*HEADER STYLE START*/
 header {
   display: flex;
@@ -21,14 +18,18 @@ header {
 header > ul {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   width: 75vw;
   height: 7.5vh;
   list-style: none;
-  color: white;
   font-size: 3vh;
   gap: 1.5vw;
   margin: 1vw;
   line-height: 7.5vh;
+}
+
+header > a:link, header > a:visited {
+  color: white;
 }
 
 header > img {
@@ -36,10 +37,7 @@ header > img {
 }
 
 header > ul > li {
-  width: 12vw;
-  vertical-align: middle;
   text-align: center;
-  padding: 0.1%;
 }
 
 header > ul > li:hover {
@@ -48,8 +46,8 @@ header > ul > li:hover {
 
 header > ul > li > a {
   text-decoration: none;
-  color: inherit;
   width: 100%;
+  color: white;
 }
 /*HEADER STYLE END*/
 /*FOOTER STYLE START*/
@@ -60,9 +58,16 @@ footer {
   padding: 5%;
   color: white;
   justify-content: space-around;
+  margin: 1vh;
 }
 
 footer > #left > img {
   height: 7.5vh;
 }
 /*FOOTER STYLE END*/
+
+/*MAIN STYLE START*/
+main {
+  margin: 1vh;
+}
+/*MAIN STYLE END*/
