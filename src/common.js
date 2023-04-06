@@ -8,6 +8,7 @@ function makeCommon() {
     $("head").append("<link rel='stylesheet' href='./common.css' type='text/css'>");
     $("head").append("<link rel='stylesheet' href='./colours.css' type='text/css'>");
     $("head").append("<link rel='icon' href='./images/favicon.ico' type='icon'>");
+    $("head").append("<meta name='charset' content='UTF-8'>");
     makeHeader();
     makeFooter();
 }
@@ -53,12 +54,12 @@ function makeFooter() {
     if (localStorage.language === "no") {
         $("footer").html("<div id='left'>\
         <img src='./images/gardermoen-logo.png' alt='Logo'>\
-        <h3>Besøksadresse:</h3>\
+        <h3>Bes&oslashksadresse:</h3>\
         <p>Edvard Munchs Veg<br>2061 Gardermoen</p>\
       </div>\
       <div id='middle'>\
         <h2>Kontakt oss</h2>\
-        <p><a href='https://tilbakemelding.avinor.no/'>Gi oss din tilbakemelding eller still et spørsmål</a></p>\
+        <p><a href='https://tilbakemelding.avinor.no/'>Gi oss din tilbakemelding eller still et sp&oslashrsm&aringl</a></p>\
         <p>Telefon: <a href='tlf:67030000'>67 03 00 00</a></p>\
       </div>\
       <div id='right'>\

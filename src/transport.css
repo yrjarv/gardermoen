@@ -1,0 +1,8 @@
+#departureboards {
+  display: flex;
+  flex-direction: row;
+}
+
+iframe {
+  height: 100vh;
+}
