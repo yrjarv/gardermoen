@@ -65,7 +65,7 @@ Fortunately, I have made this very simple. Almost no installing is needed. In or
   <li>Download the 'src' folder</li>
   <li>Open index.html</li>
 </ul>
-If you want to make changes, you need to have the Typescript compiler installed. When you have made your edits, enter the project folder and write the following into the terminal:
+If you want to make changes, you need to have the Typescript compiler installed. When you have made your edits, enter the "src/scripts" folder and write the following into the terminal:
 <ol>
   <li>npm install -g typescript</li>
   <li>tsc</li>
