@@ -38,6 +38,7 @@ header > img {
 
 header > ul > li {
   text-align: center;
+  width: 12vw;
 }
 
 header > ul > li:hover {

@@ -1,23 +1,23 @@
 /**
  * Runs from body onLoad in all HTML documents. Starts functions to make common elements
  */
-function makeCommon(): void {
-  if(!localStorage.language) {localStorage.language = "no"} // Default language is Norwegian
-
-  $("head").append("<link rel='stylesheet' href='./common.css' type='text/css'>");
-  $("head").append("<link rel='stylesheet' href='./colours.css' type='text/css'>");
-  $("head").append("<link rel='icon' href='./images/favicon.ico' type='icon'>");
-  $("head").append("<meta name='charset' content='UTF-8'>");
-  makeHeader();
-  makeFooter();
+function makeCommon() {
+    if (!localStorage.language) {
+        localStorage.language = "no";
+    } // Default language is Norwegian
+    $("head").append("<link rel='stylesheet' href='./stylesheets/common.css' type='text/css'>");
+    $("head").append("<link rel='stylesheet' href='./stylesheets/colours.css' type='text/css'>");
+    $("head").append("<link rel='icon' href='./images/favicon.ico' type='icon'>");
+    $("head").append("<meta name='charset' content='UTF-8'>");
+    makeHeader();
+    makeFooter();
 }
 /**
  * Makes the header of the document
  */
-function makeHeader(): void {
-  if (localStorage.language === "no") {
-    $("header").html(
-      "<img src='./images/gardermoen-logo.png' alt='Logo' id='logo'>\
+function makeHeader() {
+    if (localStorage.language === "no") {
+        $("header").html("<img src='./images/gardermoen-logo.png' alt='Logo' id='logo'>\
       <ul>\
         <li><a href='./hjem.html'>Hjem</a></li>\
         <li><a href='./direkteruter.html'>Direkteruter</a></li>\
@@ -28,12 +28,10 @@ function makeHeader(): void {
       <div id='langugages'>\
         <img src='./images/flag-norway.png' alt='Norsk' id='flagNorway'>\
         <img src='./images/flag-english.png' alt='English' id='flagEnglish'>\
-      </div>"
-    )
-  }
-  else if (localStorage.language === "en") {
-    $("header").html(
-      "<img src='./images/gardermoen-logo.png' alt='Logo'>\
+      </div>");
+    }
+    else if (localStorage.language === "en") {
+        $("header").html("<img src='./images/gardermoen-logo.png' alt='Logo'>\
       <ul>\
         <li><a href='./hjem.html'>Home</a></li>\
         <li><a href='./direkteruter.html'>Direct routes</a></li>\
@@ -44,20 +42,17 @@ function makeHeader(): void {
       <div id='langugages'>\
         <img src='./images/flag-norway.png' alt='Norsk' id='flagNorway'>\
         <img src='./images/flag-english.png' alt='English' id='flagEnglish'>\
-      </div>"
-    )
-  }
-
-  $("#flagNorway").on("click", function()  {localStorage.language = "no"; window.location.reload()})
-  $("#flagEnglish").on("click", function() {localStorage.language = "en"; window.location.reload()})
+      </div>");
+    }
+    $("#flagNorway").on("click", function () { localStorage.language = "no"; window.location.reload(); });
+    $("#flagEnglish").on("click", function () { localStorage.language = "en"; window.location.reload(); });
 }
 /**
  * Makes the footer of the document
  */
-function makeFooter(): void {
-  if (localStorage.language === "no") {
-    $("footer").html(
-      "<div id='left'>\
+function makeFooter() {
+    if (localStorage.language === "no") {
+        $("footer").html("<div id='left'>\
         <img src='./images/gardermoen-logo.png' alt='Logo'>\
         <h3>Bes&oslashksadresse:</h3>\
         <p>Edvard Munchs Veg<br>2061 Gardermoen</p>\
@@ -69,12 +64,10 @@ function makeFooter(): void {
       </div>\
       <div id='right'>\
         <iframe src='https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Edvard%20Munchs%20veg%20Gardermoen+(Oslo%20Lufthavn)&amp;t=&amp;z=9&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'></iframe>\
-      <div>"
-    )
-  }
-  else if (localStorage.language === "en") {
-    $("footer").html(
-      "<div id='left'>\
+      <div>");
+    }
+    else if (localStorage.language === "en") {
+        $("footer").html("<div id='left'>\
         <img src='./images/gardermoen-logo.png' alt='Logo'>\
         <h3>Visiting address:</h3>\
         <p>Edvard Munchs Veg<br>2061 Gardermoen</p>\
@@ -86,7 +79,6 @@ function makeFooter(): void {
       </div>\
       <div id='right'>\
         <iframe src='https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Edvard%20Munchs%20veg%20Gardermoen+(Oslo%20Lufthavn)&amp;t=&amp;z=9&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'></iframe>\
-      <div>"
-    )
-  }
+      <div>");
+    }
 }

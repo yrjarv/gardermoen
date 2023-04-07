@@ -1,0 +1,16 @@
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+iframe {
+  height: 80vh;
+  width: 25vw;
+}
+
+#trains, #buses {
+  background-color: lightgrey;
+  border-radius: 10px;
+  padding: 40px;
+  margin: 10px;
+}
