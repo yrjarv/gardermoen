@@ -3,6 +3,5 @@
     "target": "es2016",
     "module": "commonjs",
     "esModuleInterop": true,
-    "watch": true,
   }
 }
