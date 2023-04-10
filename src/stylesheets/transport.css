@@ -3,7 +3,7 @@ main {
   flex-direction: row;
 }
 
-iframe {
+#buses > iframe, #trains > iframe {
   height: 80vh;
   width: 25vw;
 }
