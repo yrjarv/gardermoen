@@ -50,7 +50,7 @@ This is a website built in the subject IT1 at the Norwegian Upper Secondary Scho
 >Oslo Lufthavn ønsker seg også forslag til nye nettsider. De ønsker seg et nettsted som er enkelt å navigere i, og som har en tydelig helhetlig design med bilder og tekst fra livet på flyplassen. Du bestemmer selv hvor mye du vil gjøre ut av nettsidene, men som et minimum må du ha med sidene Hjem, Direkteruter, Flyselskap og Om oss. Bruk det du kan av HTML og CSS til å utforme nettstedet og til å overbevise leserne om at dette er noe de må få med seg. Temaet skal være glede, nysgjerrighet og turisme.
 ### What More Has Been Done? <a id="whatmore"></a>
 The "Direkteruter" (direct routes) page has been connected to the XML service provided by Avinor (the Norwegian airport authority).\
-All webpages have the same header, where you can choose the language - Norwegian or English. This is saved using a cookie.\
+All webpages have the same header, where you can choose the language - Norwegian or English. This is saved using a cookie.
 
 ### Built With
 
