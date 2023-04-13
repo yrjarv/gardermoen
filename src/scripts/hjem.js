@@ -18,5 +18,6 @@ function mainLoadHjem() {
         $(".card > a").each(function (index) {
             $(this).text(translations.a[index]);
         });
+        $("title").text("Home | Gardermoen");
     }
 }
