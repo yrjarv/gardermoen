@@ -1,3 +1,6 @@
+/**
+ * Runs from <body> onLoad in transport.html. Translates the site to English if necessary.
+ */
 function mainLoadTransport(): void {
   if (localStorage.language === 'en') {
     $("#buses > h1").text("Bus departures");

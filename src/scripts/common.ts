@@ -1,5 +1,5 @@
 /**
- * Runs from body onLoad in all HTML documents. Starts functions to make common elements
+ * Runs from <body> onLoad in all the HTML documents. Starts functions to make common elements
  */
 function makeCommon(): void {
   if(!localStorage.language) {localStorage.language = "no"} // Default language is Norwegian
@@ -15,7 +15,7 @@ function makeCommon(): void {
  * Makes the header of the document
  */
 function makeHeader(): void {
-  if (localStorage.language === "no") {
+  if (localStorage.language === "no") { // Norwegian version
     $("header").html(
       "<img src='./images/gardermoen-logo.png' alt='Logo' id='logo'>\
       <ul>\
@@ -31,7 +31,7 @@ function makeHeader(): void {
       </div>"
     )
   }
-  else if (localStorage.language === "en") {
+  else if (localStorage.language === "en") { //English version
     $("header").html(
       "<img src='./images/gardermoen-logo.png' alt='Logo'>\
       <ul>\
@@ -48,6 +48,7 @@ function makeHeader(): void {
     )
   }
 
+  // Makes language selection flags in header clickable
   $("#flagNorway") .on("click", function()  {localStorage.language = "no"; window.location.reload()})
   $("#flagEnglish").on("click", function() {localStorage.language = "en"; window.location.reload()})
 }
@@ -55,7 +56,7 @@ function makeHeader(): void {
  * Makes the footer of the document
  */
 function makeFooter(): void {
-  if (localStorage.language === "no") {
+  if (localStorage.language === "no") { // Norwegian version
     $("footer").html(
       "<div id='left'>\
         <img src='./images/gardermoen-logo.png' alt='Logo'>\
@@ -72,7 +73,7 @@ function makeFooter(): void {
       <div>"
     )
   }
-  else if (localStorage.language === "en") {
+  else if (localStorage.language === "en") { // English version
     $("footer").html(
       "<div id='left'>\
         <img src='./images/gardermoen-logo.png' alt='Logo'>\

@@ -1,3 +1,7 @@
+/**
+ * Runs from <body> onLoad in om.html.
+ * Adds different background colour to the cards, then translates the page to English if necessary.
+ */
 function mainLoadOm(): void {
   $(".card").each(function(i) {
     $(this).attr(
