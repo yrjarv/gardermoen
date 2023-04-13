@@ -1,3 +1,6 @@
+/**
+ * Called from onLoad on <body> in hjem.html. Translates the page to english if necessary.
+ */
 function mainLoadHjem() {
     let translations = {
         h2: {

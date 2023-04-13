@@ -1,5 +1,5 @@
 /**
- * Runs from body onLoad in all HTML documents. Starts functions to make common elements
+ * Runs from <body> onLoad in all the HTML documents. Starts functions to make common elements
  */
 function makeCommon() {
     if (!localStorage.language) {
@@ -16,7 +16,7 @@ function makeCommon() {
  * Makes the header of the document
  */
 function makeHeader() {
-    if (localStorage.language === "no") {
+    if (localStorage.language === "no") { // Norwegian version
         $("header").html("<img src='./images/gardermoen-logo.png' alt='Logo' id='logo'>\
       <ul>\
         <li><a href='./hjem.html'>Hjem</a></li>\
@@ -30,7 +30,7 @@ function makeHeader() {
         <img src='./images/flag-english.png' alt='English' id='flagEnglish'>\
       </div>");
     }
-    else if (localStorage.language === "en") {
+    else if (localStorage.language === "en") { //English version
         $("header").html("<img src='./images/gardermoen-logo.png' alt='Logo'>\
       <ul>\
         <li><a href='./hjem.html'>Home</a></li>\
@@ -44,6 +44,7 @@ function makeHeader() {
         <img src='./images/flag-english.png' alt='English' id='flagEnglish'>\
       </div>");
     }
+    // Makes language selection flags in header clickable
     $("#flagNorway").on("click", function () { localStorage.language = "no"; window.location.reload(); });
     $("#flagEnglish").on("click", function () { localStorage.language = "en"; window.location.reload(); });
 }
@@ -51,7 +52,7 @@ function makeHeader() {
  * Makes the footer of the document
  */
 function makeFooter() {
-    if (localStorage.language === "no") {
+    if (localStorage.language === "no") { // Norwegian version
         $("footer").html("<div id='left'>\
         <img src='./images/gardermoen-logo.png' alt='Logo'>\
         <h3>Bes&oslashksadresse:</h3>\
@@ -66,7 +67,7 @@ function makeFooter() {
         <iframe src='https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Edvard%20Munchs%20veg%20Gardermoen+(Oslo%20Lufthavn)&amp;t=&amp;z=9&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'></iframe>\
       <div>");
     }
-    else if (localStorage.language === "en") {
+    else if (localStorage.language === "en") { // English version
         $("footer").html("<div id='left'>\
         <img src='./images/gardermoen-logo.png' alt='Logo'>\
         <h3>Visiting address:</h3>\
