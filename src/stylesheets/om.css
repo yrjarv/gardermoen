@@ -1,0 +1,35 @@
+h1 {
+  margin: 20px;
+}
+.card {
+  margin: 20px;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+#mainContent {
+  width: 80%
+}
+
+#mainContent > hr {
+  width: 90%;
+}
+
+#imagesContainer {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin-top: 5%;
+}
+
+#imagesContainer > img {
+  margin-bottom: 30%;
+  width: 90%;
+  height: auto;
+  border-radius: 10px;
+}
