@@ -1,0 +1,47 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 80%;
+  border-radius: 20px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+#priorityAirlines {
+  background-color: silver;
+}
+#priorityAirlines > .airline > a {
+  background-color: var(--avinor-purple);
+  color: white;
+}
+
+#nonpriorityAirlines {
+  background-color: lightgray;
+}
+#nonpriorityAirlines > .airline > a {
+  background-color: silver;
+  color: black;
+}
+
+.airline > a {
+  padding: 5%;
+  margin: 10%;
+  background-color: silver;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.airline > a > img {
+  width: 75%;
+}
+
+.airline > a > p {
+  font-size: 150%;
+  font-weight: bold;
+}
