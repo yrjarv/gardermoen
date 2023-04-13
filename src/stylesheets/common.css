@@ -1,5 +1,5 @@
 html {
-  font-family: Arial, Helvetica, sans-serif
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /*HEADER STYLE START*/
@@ -71,5 +71,6 @@ footer > #left > img {
 /*MAIN STYLE START*/
 main {
   margin: 1vh;
+  padding: 2vh;
 }
 /*MAIN STYLE END*/
