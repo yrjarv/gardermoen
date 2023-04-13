@@ -33,7 +33,7 @@ header > a:link, header > a:visited {
   color: white;
 }
 
-header > img {
+header > a > img {
   height: 7.5vh;
 }
 

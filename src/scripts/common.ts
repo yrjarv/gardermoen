@@ -17,7 +17,7 @@ function makeCommon(): void {
 function makeHeader(): void {
   if (localStorage.language === "no") { // Norwegian version
     $("header").html(
-      "<img src='./images/gardermoen-logo.png' alt='Logo' id='logo'>\
+      "<a href='./hjem.html'><img src='./images/gardermoen-logo.png' alt='Logo' id='logo'></a>\
       <ul>\
         <li><a href='./hjem.html'>Hjem</a></li>\
         <li><a href='./direkteruter.html'>Direkteruter</a></li>\
