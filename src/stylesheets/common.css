@@ -23,7 +23,7 @@ header > ul {
   width: 75vw;
   height: 7.5vh;
   list-style: none;
-  font-size: 3vh;
+  font-size: 150%;
   gap: 1.5vw;
   margin: 1vw;
   line-height: 7.5vh;
@@ -72,5 +72,9 @@ footer > #left > img {
 main {
   margin: 1vh;
   padding: 2vh;
+}
+
+p {
+  font-size: 100%;
 }
 /*MAIN STYLE END*/
