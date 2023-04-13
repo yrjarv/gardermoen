@@ -70,7 +70,7 @@ This will compile all the .ts files to .js files, all of which are linked to in 
 - [ ] Direkteruter
 - [x] Tansport til/fra
 - [ ] Flyselskap
-- [ ] About us
+- [x] About us
 
 See the [open issues](https://github.com/norway-yv/gardermoen-website-it1/issues) for a full list of proposed features (and known issues).
 
