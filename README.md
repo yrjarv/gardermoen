@@ -47,18 +47,15 @@ All webpages have the same header, where you can choose the language - Norwegian
 
 * TypeScript
 * [![JQuery][JQuery.com]][JQuery-url]
+* PowerShell
 
 
 <!-- GETTING STARTED -->
 ## Making Your Own Local Copy <a id="making-copy"></a>
-Fortunately, I have made this very simple. Almost no installing is needed. In order to get a local copy up and running, do the following:
-<ul>
-  <li>Download the 'src' folder</li>
-  <li>Open index.html</li>
-</ul>
+You only have to open the ./src/index.html file to run a simple version of this website, but I recommend that you also make sure to run the ./src/scripts/downloadXML.ps1 file as long as you plan to open direkteruter.html. This is to make sure that the content on direkteruter.html is properly syncronized with Avinor's open data, something you cannot do directly from the browser.<br>
 If you want to make changes, you need to have the Typescript compiler installed. When you have made your edits, enter the "src/scripts" folder and write the following into the terminal:
 <ol>
-  <li>npm install -g typescript</li>
+  <li>npm install typescript</li>
   <li>tsc</li>
 </ol>
 This will compile all the .ts files to .js files, all of which are linked to in their respective HTML files.
@@ -70,7 +67,7 @@ This will compile all the .ts files to .js files, all of which are linked to in 
 - [ ] Direkteruter
 - [x] Tansport til/fra
 - [x] Flyselskap
-- [x] About us
+- [x] About us]
 
 See the [open issues](https://github.com/norway-yv/gardermoen-website-it1/issues) for a full list of proposed features (and known issues).
 
@@ -91,19 +88,5 @@ Project Link: [https://github.com/norway-yv/gardermoen-website-it1](https://gith
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/norway-yv/gardermoen-website-it1.svg?style=for-the-badge
-[contributors-url]: https://github.com/norway-yv/gardermoen-website-it1/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/norway-yv/gardermoen-website-it1.svg?style=for-the-badge
-[forks-url]: https://github.com/norway-yv/gardermoen-website-it1/network/members
-[stars-shield]: https://img.shields.io/github/stars/norway-yv/gardermoen-website-it1.svg?style=for-the-badge
-[stars-url]: https://github.com/norway-yv/gardermoen-website-it1/stargazers
-[issues-shield]: https://img.shields.io/github/issues/norway-yv/gardermoen-website-it1.svg?style=for-the-badge
-[issues-url]: https://github.com/norway-yv/gardermoen-website-it1/issues
-[license-shield]: https://img.shields.io/github/license/norway-yv/gardermoen-website-it1.svg?style=for-the-badge
-[license-url]: https://github.com/norway-yv/gardermoen-website-it1/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
-
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
