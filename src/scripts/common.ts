@@ -7,7 +7,6 @@ function makeCommon(): void {
   $("head").append("<link rel='stylesheet' href='./stylesheets/common.css' type='text/css'>");
   $("head").append("<link rel='stylesheet' href='./stylesheets/colours.css' type='text/css'>");
   $("head").append("<link rel='icon' href='./images/favicon.ico' type='icon'>");
-  $("head").append("<meta name='charset' content='UTF-8'>");
   makeHeader();
   makeFooter();
 }
