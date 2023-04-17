@@ -67,7 +67,7 @@ This will compile all the .ts files to .js files, all of which are linked to in 
 - [ ] Direkteruter
 - [x] Tansport til/fra
 - [x] Flyselskap
-- [x] About us](https://img.shields.io/badge/TypeScript-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
+- [x] About us]
 
 See the [open issues](https://github.com/norway-yv/gardermoen-website-it1/issues) for a full list of proposed features (and known issues).
 
