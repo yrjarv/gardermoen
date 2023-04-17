@@ -1,0 +1,31 @@
+#destinationsContainer, #departures {
+  width: 90vw;
+  max-height: 175vh;
+  padding: 2%;
+  margin-right: 2.5%;
+  background-color: lightgrey;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+#destinations {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-height: 150vh;
+}
+
+#destinations > h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.destination {
+  width: 10%;
+  margin: 3px;
+  background-color: var(--avinor-grey);
+  padding: 10px;
+  color: white;
+  border-radius: 10px;  
+}

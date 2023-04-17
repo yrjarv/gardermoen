@@ -4,12 +4,18 @@
     <script type="text/javascript" src="./scripts/jquery.min.js"></script>
     <script type="text/javascript" src="./scripts/common.js"></script>
     <script type="text/javascript" src="./scripts/direkteruter.js"></script>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/direkteruter.css">
     <title>Direkteruter | Gardermoen</title>
-    <script type="text/javascript" src="https://airlabs.co/api/v9/schedules?dep_iata=OSL&api_key=36eb63a8-f692-4668-b781-c063cb81f75e"></script>
   </head>
   <body onLoad="makeCommon(); mainLoadDirekteruter()">
     <header></header>
-    <main></main>
+    <main>
+      <div id="destinationsContainer">
+        <h2>Alle direkteruter</h2>
+        <div id="destinations"></div>
+      </div>
+      <div id="departures"></div>
+    </main>
     <footer></footer>
   </body>
 </html>
