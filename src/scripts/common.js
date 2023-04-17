@@ -31,7 +31,7 @@ function makeHeader() {
       </div>");
     }
     else if (localStorage.language === "en") { //English version
-        $("header").html("<img src='./images/gardermoen-logo.png' alt='Logo'>\
+        $("header").html("<a href='./hjem.html'><img src='./images/gardermoen-logo.png' alt='Logo' id='logo'></a>\
       <ul>\
         <li><a href='./hjem.html'>Home</a></li>\
         <li><a href='./direkteruter.html'>Direct routes</a></li>\
