@@ -52,7 +52,7 @@ All webpages have the same header, where you can choose the language - Norwegian
 
 <!-- GETTING STARTED -->
 ## Making Your Own Local Copy <a id="making-copy"></a>
-You only have to open the ./src/index.html file to run a simple version of this website, but I recommend that you also make sure to run the ./src/scripts/downloadXML.ps1 file as long as you plan to open direkteruter.html. This is to make sure that the content on direkteruter.html is properly syncronized with Avinor's open data, something you cannot do directly from the browser.<br>
+In order to run the website, you have two options: 1) Open the file using the file:/// protocol in your browser or 2) run a server (e.g. using VScode's "live preview") and open the site from there. The best option if you want to have a live departure board on direkteruter.html is to run a server locally, as any attempts to fetch the raw data file from the file:/// protocol causes a CORS error. I also recommend that you make sure to run the ./src/scripts/downloadXML.ps1 file - once again as long as you plan to open direkteruter.html. This is to make sure that the content on direkteruter.html is properly syncronized with Avinor's open data, something you cannot do directly from the browser (thanks a lot, CORS).<br>
 If you want to make changes, you need to have the Typescript compiler installed. When you have made your edits, enter the "src/scripts" folder and write the following into the terminal:
 <ol>
   <li>npm install typescript</li>
@@ -78,11 +78,7 @@ See the [open issues](https://github.com/norway-yv/gardermoen-website-it1/issues
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<!-- CONTACT -->
 ## Contact
-
-norway.yv@gmail.com
-
 Project Link: [https://github.com/norway-yv/gardermoen-website-it1](https://github.com/norway-yv/gardermoen-website-it1)
 
 
