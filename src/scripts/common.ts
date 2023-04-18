@@ -65,7 +65,7 @@ function makeFooter(): void {
       <div id='middle'>\
         <h2>Kontakt oss</h2>\
         <p><a href='https://tilbakemelding.avinor.no/'>Gi oss din tilbakemelding eller still et sp&oslashrsm&aringl</a></p>\
-        <p>Telefon: <a href='tlf:67030000'>67 03 00 00</a></p>\
+        <p>Telefon: <a href='tel:67030000'>67 03 00 00</a></p>\
       </div>\
       <div id='right'>\
         <iframe src='https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Edvard%20Munchs%20veg%20Gardermoen+(Oslo%20Lufthavn)&amp;t=&amp;z=9&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'></iframe>\
@@ -82,7 +82,7 @@ function makeFooter(): void {
       <div id='middle'>\
         <h2>Contact us</h2>\
         <p><a href='https://tilbakemelding.avinor.no/'>Give us your feedback or ask us a question</a></p>\
-        <p>Phone: <a href='tlf:67030000'>67 03 00 00</a></p>\
+        <p>Phone: <a href='tel:67030000'>67 03 00 00</a></p>\
       </div>\
       <div id='right'>\
         <iframe src='https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Edvard%20Munchs%20veg%20Gardermoen+(Oslo%20Lufthavn)&amp;t=&amp;z=9&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'></iframe>\
