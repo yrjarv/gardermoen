@@ -4,9 +4,12 @@
 function makeCommon(): void {
   if(!localStorage.language) {localStorage.language = "no"} // Default language is Norwegian
 
-  $("head").append("<link rel='stylesheet' href='./stylesheets/common.css' type='text/css'>");
-  $("head").append("<link rel='stylesheet' href='./stylesheets/colours.css' type='text/css'>");
-  $("head").append("<link rel='icon' href='./images/favicon.ico' type='icon'>");
+  $("head").append("\
+    <link rel='stylesheet' href='./stylesheets/common.css' type='text/css'>\
+    <link rel='stylesheet' href='./stylesheets/colours.css' type='text/css'>\
+    <link rel='icon' href='./images/favicon.ico' type='icon'>\
+    <meta name='viewport' content='width=device-width, initial-scale=1'>\
+  ")
   makeHeader();
   makeFooter();
 }
@@ -68,7 +71,7 @@ function makeFooter(): void {
         <p>Telefon: <a href='tel:67030000'>67 03 00 00</a></p>\
       </div>\
       <div id='right'>\
-        <iframe src='https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Edvard%20Munchs%20veg%20Gardermoen+(Oslo%20Lufthavn)&amp;t=&amp;z=9&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'></iframe>\
+        <iframe src='https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Edvard%20Munchs%20veg%20Gardermoen+(Oslo%20Lufthavn)&amp;t=&amp;z=9&amp;ie=UTF8&amp;iwloc=B&amp;output=embed' title='Google Maps'></iframe>\
       <div>"
     )
   }
@@ -85,7 +88,7 @@ function makeFooter(): void {
         <p>Phone: <a href='tel:67030000'>67 03 00 00</a></p>\
       </div>\
       <div id='right'>\
-        <iframe src='https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Edvard%20Munchs%20veg%20Gardermoen+(Oslo%20Lufthavn)&amp;t=&amp;z=9&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'></iframe>\
+        <iframe src='https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Edvard%20Munchs%20veg%20Gardermoen+(Oslo%20Lufthavn)&amp;t=&amp;z=9&amp;ie=UTF8&amp;iwloc=B&amp;output=embed' title='Google Maps'></iframe>\
       <div>"
     )
   }
