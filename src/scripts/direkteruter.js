@@ -1,6 +1,21 @@
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+/**
+ * Runs from onLoad on <body> in direkteruter.html.
+ * Creates a local object with all destinations sorted by country.
+ * Loads the list of destinations based on the user's chosen language, and translates other text if necessary.
+ * Then loads the departure board for #departures.
+ */
 function mainLoadDirekteruter() {
     // Destinations by country in Norwegian and English
-    var destinationsNO = {
+    let destinationsNO = {
         "Norge": [
             "Alta",
             "And&oslashya",
@@ -194,7 +209,7 @@ function mainLoadDirekteruter() {
         "Ungarn": "Budapest",
         "&Oslashsterrike": "Wien"
     };
-    var destinationsEN = {
+    let destinationsEN = {
         "Norway": [
             "Alta",
             "And&oslashya",
@@ -388,17 +403,43 @@ function mainLoadDirekteruter() {
             "New York"
         ]
     };
+    // Creates 4 tables to use as departure boards
+    $("#departures").html(loadDepartureBoardTables(4));
     // Ensures that the correct language is chosen based on the user's choice of language
     if (localStorage.language === "no") {
         $("#destinations").html(loadDestinations(destinationsNO));
     }
     else {
         $("#destinations").html(loadDestinations(destinationsEN));
+        $($(".container > h2")[0]).text("All direct routes");
+        $($(".container > h2")[1]).text("Departure board");
+        for (let i = 0; i < $("#departures > table > thead").length; i++) {
+            $($("#departures > table > thead")[i]).html("<tr>\
+          <td>Flight</td>\
+          <td>Destination</td>\
+          <td>Time</td>\
+        </tr>");
+        }
+    }
+    ;
+    // Makes the contents of said tables update every 500 ms
+    for (let i = 0; i < $("table").length; i++) {
+        window.setInterval(function () {
+            return __awaiter(this, void 0, void 0, function* () {
+                $($("#departures > table > tbody")[i]).html(yield loadDepartureBoard("./scripts/outXML.xml", i));
+            });
+        }, 500);
     }
 }
+;
+/**
+ *
+ * @param destinations An object with all destinations, key is country and value is either one destination or an array of destinations
+ * @returns A string with the HTML for the #destinations div
+*/
 function loadDestinations(destinations) {
-    var html = "";
-    for (var i = 0; i < Object.keys(destinations).length; i++) {
+    let html = "";
+    for (let i = 0; i < Object.keys(destinations).length; i++) {
         html += ("<div class='destination'>\
         <p><b>" + Object.keys(destinations)[i] + "</b></p>\
         <p>");
@@ -408,12 +449,78 @@ function loadDestinations(destinations) {
         }
         // If there are several, add the different cities with comma and space between to the HTML
         else {
-            for (var j = 0; j < destinations[Object.keys(destinations)[i]].length - 1; j++) {
+            for (let j = 0; j < destinations[Object.keys(destinations)[i]].length - 1; j++) {
                 html += destinations[Object.keys(destinations)[i]][j] + ", ";
             }
+            ;
             html += destinations[Object.keys(destinations)[i]][destinations[Object.keys(destinations)[i]].length - 1];
         }
+        ;
         html += "</p></div>";
     }
     return html;
+}
+;
+/**
+ *
+ * @param amount Amount of departure boards needed
+ * @returns The HTML for the requested amount of departure boards
+ */
+function loadDepartureBoardTables(amount) {
+    let html = "";
+    for (let i = 0; i < amount; i++) {
+        html += ("<table>\
+        <thead>\
+          <tr>\
+            <td>Flight</td>\
+            <td>Destinasjon</td>\
+            <td>Tid</td>\
+          </tr>\
+        </thead>\
+        <tbody></tbody>\
+      </table>");
+    }
+    return html;
+}
+/**
+ * Creates the HTML for one departure board.
+ * @param xmlPath The path to the XML file containing the raw data from Avinor. This file is replaced frequently
+ * @param tableIndex The index of the table with the departure board
+ * @returns
+ */
+function loadDepartureBoard(xmlPath, tableIndex) {
+    return __awaiter(this, void 0, void 0, function* () {
+        let html = "";
+        // Fetching the data
+        const xmlRaw = new XMLHttpRequest();
+        xmlRaw.open('GET', xmlPath, false);
+        xmlRaw.send(null);
+        const xmlDoc = $(xmlRaw.responseText);
+        const flights = xmlDoc.find("flight");
+        let indexStart = 0;
+        for (let j = 0; j < flights.length; j++) {
+            var time = new Date($(flights[j]).find("schedule_time").text());
+            if (time.getTime() - time.getTimezoneOffset() < Date.now()) {
+                indexStart = j;
+            }
+        }
+        // Finds where i should start iterating, if this function is used for a table other than the first i starts at 20*tableIndex more
+        let i = indexStart + 20 * tableIndex + 1;
+        let indexEnd = i + 20;
+        while (i < indexEnd) { // No more than 20 flights
+            var flight = $(flights[i]);
+            // Get local time from ISO string
+            var time = new Date(flight.find("schedule_time").text());
+            time = new Date(time.getTime() - time.getTimezoneOffset());
+            // Generates the HTML for the current row
+            html += "\
+    <tr>\
+      <td>" + flight.find("flight_id").text() + "</td>\
+      <td>" + flight.find("airport").text() + "</td>\
+      <td>" + time.toString().slice(15, 21) + "</td>\
+    </tr>";
+            i++;
+        }
+        return html;
+    });
 }

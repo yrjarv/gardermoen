@@ -1,3 +1,9 @@
+/**
+ * Runs from onLoad on <body> in direkteruter.html.
+ * Creates a local object with all destinations sorted by country.
+ * Loads the list of destinations based on the user's chosen language, and translates other text if necessary.
+ * Then loads the departure board for #departures.
+ */
 function mainLoadDirekteruter() {
   // Destinations by country in Norwegian and English
   let destinationsNO: { [country: string]: string | string[] } = {
@@ -389,35 +395,136 @@ function mainLoadDirekteruter() {
     ]
   };
 
+  // Creates 4 tables to use as departure boards
+  $("#departures").html(loadDepartureBoardTables(4))
+
   // Ensures that the correct language is chosen based on the user's choice of language
   if (localStorage.language === "no") {
     $("#destinations").html(loadDestinations(destinationsNO));
   }
   else {
     $("#destinations").html(loadDestinations(destinationsEN));
-  }
-}
+    $($(".container > h2")[0]).text("All direct routes");
+    $($(".container > h2")[1]).text("Departure board");
+    
+    for (let i = 0; i < $("#departures > table > thead").length; i++) {
+      $($("#departures > table > thead")[i]).html(
+        "<tr>\
+          <td>Flight</td>\
+          <td>Destination</td>\
+          <td>Time</td>\
+        </tr>"
+      )
+    }
 
+  };
+  
+  // Makes the contents of said tables update every 500 ms
+  for (let i = 0; i < $("table").length; i++) {
+    window.setInterval(async function(){
+      $($("#departures > table > tbody")[i]).html(await loadDepartureBoard("./scripts/outXML.xml", i));
+        }, 500);
+  }
+
+};
+
+/**
+ * 
+ * @param destinations An object with all destinations, key is country and value is either one destination or an array of destinations
+ * @returns A string with the HTML for the #destinations div
+*/
 function loadDestinations(destinations: { [key: string]: string | string[] }): string {
   let html: string = "";
   for (let i = 0; i < Object.keys(destinations).length; i++) {
     html += (
       "<div class='destination'>\
         <p><b>" + Object.keys(destinations)[i] + "</b></p>\
-        <p>")
+        <p>");
     // If only one destination in the country, simply add its string to the HTML
     if (typeof destinations[Object.keys(destinations)[i]] === "string") {
-      html += destinations[Object.keys(destinations)[i]]
+      html += destinations[Object.keys(destinations)[i]];
     }
     // If there are several, add the different cities with comma and space between to the HTML
     else {
       for (let j = 0; j < destinations[Object.keys(destinations)[i]].length-1; j++) {
-        html += destinations[Object.keys(destinations)[i]][j] + ", "
-      }
+        html += destinations[Object.keys(destinations)[i]][j] + ", ";
+      };
       html += destinations[Object.keys(destinations)[i]][
-        destinations[Object.keys(destinations)[i]].length - 1]
-    }
+        destinations[Object.keys(destinations)[i]].length - 1];
+    };
      html += "</p></div>";
   }
+  return html;
+};
+
+/**
+ * 
+ * @param amount Amount of departure boards needed
+ * @returns The HTML for the requested amount of departure boards
+ */
+function loadDepartureBoardTables(amount: number): string {
+  let html = ""
+  for (let i = 0; i < amount; i++) {
+    html += (
+      "<table>\
+        <thead>\
+          <tr>\
+            <td>Flight</td>\
+            <td>Destinasjon</td>\
+            <td>Tid</td>\
+          </tr>\
+        </thead>\
+        <tbody></tbody>\
+      </table>"
+    )
+  }
   return html
+}
+
+/**
+ * Creates the HTML for one departure board.
+ * @param xmlPath The path to the XML file containing the raw data from Avinor. This file is replaced frequently
+ * @param tableIndex The index of the table with the departure board
+ * @returns 
+ */
+async function loadDepartureBoard(xmlPath: string, tableIndex: number): Promise<string> {
+  let html = "";
+
+  // Fetching the data
+  const xmlRaw = new XMLHttpRequest()
+  xmlRaw.open('GET', xmlPath, false)
+  xmlRaw.send(null)
+  const xmlDoc = $(xmlRaw.responseText)
+  const flights = xmlDoc.find("flight")
+
+  let indexStart = 0
+
+  for (let j = 0; j < flights.length; j++) {
+    var time = new Date($(flights[j]).find("schedule_time").text())
+    if (time.getTime() - time.getTimezoneOffset() < Date.now()) {indexStart = j}
+  }
+
+  // Finds where i should start iterating, if this function is used for a table other than the first i starts at 20*tableIndex more
+  let i = indexStart + 20*tableIndex + 1
+
+  let indexEnd = i + 20
+  while (i < indexEnd) { // No more than 20 flights
+    var flight = $(flights[i])
+    // Get local time from ISO string
+    var time = new Date(flight.find("schedule_time").text());
+    time = new Date(time.getTime() - time.getTimezoneOffset())
+
+    // Generates the HTML for the current row
+    html += "\
+    <tr>\
+      <td>" + flight.find("flight_id").text() + "</td>\
+      <td>" + flight.find("airport").text() + "</td>\
+      <td>" + time.toString().slice(15, 21) + "</td>\
+    </tr>";
+
+    i++
+  }
+
+  return html
+
 }
