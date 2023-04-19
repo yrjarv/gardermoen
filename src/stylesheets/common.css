@@ -2,6 +2,10 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  margin: 0px;
+}
+
 /*HEADER STYLE START*/
 header {
   display: flex;
@@ -12,7 +16,7 @@ header {
   padding: 1vh 1vw;
   align-items: center;
   justify-content: flex-start;
-  margin: 1vh;
+  margin-bottom: 1vh;
   z-index: 999;
 }
 
