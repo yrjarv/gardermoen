@@ -2,7 +2,7 @@
 <airport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="http://flydata.avinor.no/XmlFeed.xsd"
          name="OSL">
-  <flights lastUpdate="2023-04-19T18:41:54Z">
+  <flights lastUpdate="2023-04-19T18:47:54Z">
     <flight uniqueID="11514355">
       <airline>DY</airline>
       <flight_id>DY1784</flight_id>
@@ -512,7 +512,8 @@
       <airport>SVG</airport>
       <check_in>1 2 3</check_in>
       <gate>A4</gate>
-      <status code="E" time="2023-04-19T18:45:00Z"/>
+      <status code="D" time="2023-04-19T18:46:00Z"/>
+      <delayed>Y</delayed>
     </flight>
     <flight uniqueID="11444622">
       <airline>SK</airline>
@@ -568,7 +569,7 @@
       <airport>AES</airport>
       <check_in>1 2 3</check_in>
       <gate>C6</gate>
-      <status code="D" time="2023-04-19T18:35:00Z"/>
+      <status code="D" time="2023-04-19T18:37:00Z"/>
     </flight>
     <flight uniqueID="11443936">
       <airline>DX</airline>
@@ -579,6 +580,7 @@
       <airport>FRO</airport>
       <check_in>5</check_in>
       <gate>A24</gate>
+      <status code="D" time="2023-04-19T18:44:00Z"/>
     </flight>
     <flight uniqueID="11444498">
       <airline>SK</airline>
@@ -760,6 +762,7 @@
       <arr_dep>D</arr_dep>
       <airport>HOV</airport>
       <check_in>5</check_in>
+      <gate>A27</gate>
     </flight>
     <flight uniqueID="11445263">
       <airline>WF</airline>
@@ -769,6 +772,7 @@
       <arr_dep>D</arr_dep>
       <airport>FDE</airport>
       <check_in>5</check_in>
+      <gate>A26</gate>
     </flight>
     <flight uniqueID="11447177">
       <airline>SK</airline>
