@@ -64,7 +64,7 @@ This will compile all the .ts files to .js files, all of which are linked to in 
 ## Roadmap
 
 - [x] Hjem
-- [ ] Direkteruter
+- [x] Direkteruter
 - [x] Tansport til/fra
 - [x] Flyselskap
 - [x] About us]
