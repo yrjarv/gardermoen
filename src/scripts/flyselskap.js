@@ -156,7 +156,7 @@ let airlines = [
         priority: false,
     },
     {
-        name: "Wideroe",
+        name: "Wider&oslashe",
         link: "https://www.wideroe.no",
         priority: true,
     },
