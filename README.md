@@ -6,7 +6,7 @@
     <img src="./src/images/repo-favicon.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Gardermoen Website (IT1)</h3>
+<h1 align="center">Gardermoen Website (IT1)</h1>
 
 </div>
 
@@ -22,6 +22,7 @@
         <li><a href="#minimum-requirements">Minimum Requirements Met (in Norwegian)</a></li>
         <li><a href="#whatmore">What More Has Been Done?</a></li>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#how">How Does It Work? (Technical Information)</a></li>
       </ul>
     </li>
     <li><a href="#making-copy">Making Your Own Local Copy</a></li>
@@ -39,9 +40,36 @@ This is a website built in the subject IT1 at the Norwegian Upper Secondary Scho
 
 ### Minimum Requirements Met (in Norwegian) <a id="minimum-requirements"></a>
 >Oslo Lufthavn ønsker seg også forslag til nye nettsider. De ønsker seg et nettsted som er enkelt å navigere i, og som har en tydelig helhetlig design med bilder og tekst fra livet på flyplassen. Du bestemmer selv hvor mye du vil gjøre ut av nettsidene, men som et minimum må du ha med sidene Hjem, Direkteruter, Flyselskap og Om oss. Bruk det du kan av HTML og CSS til å utforme nettstedet og til å overbevise leserne om at dette er noe de må få med seg. Temaet skal være glede, nysgjerrighet og turisme.
+
 ### What More Has Been Done? <a id="whatmore"></a>
-The "Direkteruter" (direct routes) page has been connected to the XML service provided by Avinor (the Norwegian airport authority).\
-All webpages have the same header, where you can choose the language - Norwegian or English. This is saved using a cookie.
+A header and footer with language choice (saved in localstorage.language) has been added to every page. Additionally, transport.html is created to show open departure and arrival data from Bane Nor and Ruter (trains and buses in the Oslo region), and direkteruter.html has a live departure board that is syncronized with Avinor's (Norwegian airport authorities) live XML feed.
+
+### How Does It Work? (Technical Information)  <a id="how"></a>
+The src folder contains 5 HTMl documents with content, a redirecting index.html file, and 3 folders:
+<ul>
+  <li>images - Contains all the images used on the website. This includes the logos to all the airlines mentioned on flyselskap.html (in a separate folder), as well as different illustration photos and logos/favicons.</li>
+  <li>scripts - Contains all the scripts, of which all TypeScript files have compiled JavaScript files.
+    <ul>
+      <li>common.ts - This is all the code that is reused on the different pages, and handles among other things linking to the common stylesheet and favicons, as well as generating header and footer.</li>
+      <li>hjem.ts, om.ts, transport.ts - Only handle translation of the corresponding webpage to english.</li>
+      <li>flyselskap.ts - Handles both translation and main content generation. The content generation is from the object 'airlines'.</li>
+      <li>direkteruter.ts - Handles main static content generation and translation just like flyselskap.ts, but also fetches data from outXML.xml to present in the #departures div.</li>
+      <li>donwloadXML.ps1 and outXML.xml - A PowerShell script to download raw data from Avinor and its output file. downloadXML.ps1 needs to be run in order to ensure precise and recent data on direkteruter.html.</li>
+      <li>tsconfig.json - Configuration file for the TypeScript compiler</li>
+      <li>jquery.min.js - Minified jQuery.</li>
+      <li>node_modules, package-lock.json, and package.json - NPM dependencies</li>
+    </ul>
+  </li>
+  <li>stylesheets - contains all stylesheets for either common features (e.g. header and footer) or page specific features (such as departure boards, cards on hjem.html, etc.)</li>
+</ul>
+All the html files (except index.html) link to:
+<ul>
+  <li>jquery.min.js</li>
+  <li>common.js</li>
+  <li>common.css</li>
+  <li>[page name].js</li>
+  <li>[page name].css</li>
+</ul>
 
 ### Built With
 
@@ -49,25 +77,29 @@ All webpages have the same header, where you can choose the language - Norwegian
 * [![JQuery][JQuery.com]][JQuery-url]
 * PowerShell
 
+<hr>
 
-<!-- GETTING STARTED -->
-## Making Your Own Local Copy <a id="making-copy"></a>
-In order to run the website, you have two options: 1) Open the file using the file:/// protocol in your browser or 2) run a server (e.g. using VScode's "live preview") and open the site from there. The best option if you want to have a live departure board on direkteruter.html is to run a server locally, as any attempts to fetch the raw data file from the file:/// protocol causes a CORS error. I also recommend that you make sure to run the ./src/scripts/downloadXML.ps1 file - once again as long as you plan to open direkteruter.html. This is to make sure that the content on direkteruter.html is properly syncronized with Avinor's open data, something you cannot do directly from the browser (thanks a lot, CORS).<br>
-If you want to make changes, you need to have the Typescript compiler installed. When you have made your edits, enter the "src/scripts" folder and write the following into the terminal:
+## Making And Running Your Own Local Copy <a id="making-copy"></a>
 <ol>
-  <li>npm install typescript</li>
-  <li>tsc</li>
+  <li>Donwload either the entire repository, gardermoen-website-it1-compressed.zip, or the src folder</li>
+  <li>Download the "Live Preview" extension to VSCode, or in any other way host the website on localhost. This is to make sure that your browser's CORS/CORB policy does not affect the local XML file with data for direkteruter.html.</li>
+  <li>In order to run the website, do the following:
+    <ol>
+      <li>Run downloadXML.ps1. Please keep the script running for as long as you plan to use the website, to ensure updated information on direkteruter.html.</li>
+      <li>Go to whereever you hosted the website. If you use the VSCode extension "Live Preview", it will probably be on <a href='http://127.0.0.1:3000/'>127.0.0.1:3000</a>. Then navigate to any HTML file.</li>
+    </ol>
+  </li>
 </ol>
-This will compile all the .ts files to .js files, all of which are linked to in their respective HTML files.
+If you want to make any changes to the scripts, do not touch the .js files but instead make the changes in the TypeScript files before running the command "tsc" in the scripts folder from the terminal. The reason for not touching the .js files is that all those changes will be reverted as soon as you compile the .ts files.
+<hr>
 
-<!-- ROADMAP -->
 ## Roadmap
 
 - [x] Hjem
 - [x] Direkteruter
 - [x] Tansport til/fra
 - [x] Flyselskap
-- [x] About us]
+- [x] About us
 
 See the [open issues](https://github.com/norway-yv/gardermoen-website-it1/issues) for a full list of proposed features (and known issues).
 
