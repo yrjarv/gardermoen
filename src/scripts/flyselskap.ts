@@ -1,4 +1,4 @@
-// Custom type, used in variable airlines
+// Custom type, used in object airlines
 type Airline = {
   name: string,
   link: string,
