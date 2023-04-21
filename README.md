@@ -81,7 +81,7 @@ All the html files (except index.html) link to:
 
 ## Making And Running Your Own Local Copy <a id="making-copy"></a>
 <ol>
-  <li>Donwload either the entire repository, gardermoen-website-it1-compressed.zip, or the src folder</li>
+  <li>Donwload either the entire repository, gardermoen-website-it1-zipped.zip, or the src folder</li>
   <li>Download the "Live Preview" extension to VSCode, or in any other way host the website on localhost. This is to make sure that your browser's CORS/CORB policy does not affect the local XML file with data for direkteruter.html.</li>
   <li>In order to run the website, do the following:
     <ol>
