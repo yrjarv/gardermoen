@@ -31,10 +31,8 @@
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
+<hr>
 
-
-
-<!-- ABOUT THE PROJECT -->
 ## About The Project <a id="about"></a>
 This is a website built in the subject IT1 at the Norwegian Upper Secondary School. This site is in no way affiliated with Avinor or the airport Gardermoen.
 
@@ -76,7 +74,6 @@ All the html files (except index.html) link to:
 * TypeScript
 * [![JQuery][JQuery.com]][JQuery-url]
 * PowerShell
-
 <hr>
 
 ## Making And Running Your Own Local Copy <a id="making-copy"></a>
@@ -102,16 +99,15 @@ If you want to make any changes to the scripts, do not touch the .js files but i
 - [x] About us
 
 See the [open issues](https://github.com/norway-yv/gardermoen-website-it1/issues) for a full list of proposed features (and known issues).
+<hr>
 
-
-
-<!-- LICENSE -->
 ## License
-
 Distributed under the MIT License. See `LICENSE.txt` for more information.
+<hr>
 
 ## Contact
 Project Link: [https://github.com/norway-yv/gardermoen-website-it1](https://github.com/norway-yv/gardermoen-website-it1)
+<hr>
 
 
 
