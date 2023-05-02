@@ -43,7 +43,7 @@ This is a website built in the subject IT1 at the Norwegian Upper Secondary Scho
 A header and footer with language choice (saved in localstorage.language) has been added to every page. Additionally, transport.html is created to show open departure and arrival data from Bane Nor and Ruter (trains and buses in the Oslo region), and direkteruter.html has a live departure board that is syncronized with Avinor's (Norwegian airport authorities) live XML feed.
 
 ### How Does It Work? (Technical Information)  <a id="how"></a>
-The src folder contains 5 HTMl documents with content, a redirecting index.html file, and 3 folders:
+The src folder contains 5 HTML documents with content, a redirecting index.html file, and 3 folders:
 <ul>
   <li>images - Contains all the images used on the website. This includes the logos to all the airlines mentioned on flyselskap.html (in a separate folder), as well as different illustration photos and logos/favicons.</li>
   <li>scripts - Contains all the scripts, of which all TypeScript files have compiled JavaScript files.
