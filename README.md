@@ -45,28 +45,28 @@ A header and footer with language choice (saved in localstorage.language) has be
 ### How Does It Work? (Technical Information)  <a id="how"></a>
 The src folder contains 5 HTML documents with content, a redirecting index.html file, and 3 folders:
 <ul>
-  <li>`images` - Contains all the images used on the website. This includes the logos to all the airlines mentioned on flyselskap.html (in a separate folder), as well as different illustration photos and logos/favicons.</li>
-  <li>`scripts` - Contains all the scripts, of which all TypeScript files have compiled JavaScript files.
+  <li><code>images</code> - Contains all the images used on the website. This includes the logos to all the airlines mentioned on flyselskap.html (in a separate folder), as well as different illustration photos and logos/favicons.</li>
+  <li><code>scripts</code> - Contains all the scripts, of which all TypeScript files have compiled JavaScript files.
     <ul>
-      <li>`common.ts` - This is all the code that is reused on the different pages, and handles among other things linking to the common stylesheet and favicons, as well as generating header and footer.</li>
-      <li>`hjem.ts`, `om.ts`, `transport.ts` - Only handle translation of the corresponding webpage to english.</li>
-      <li>`flyselskap.ts` - Handles both translation and main content generation. The content generation is from the object 'airlines'.</li>
-      <li>`direkteruter.ts` - Handles main static content generation and translation just like flyselskap.ts, but also fetches data from outXML.xml to present in the #departures div.</li>
-      <li>`donwloadXML.ps1` and `outXML.xml` - A PowerShell script to download raw data from Avinor and its output file. downloadXML.ps1 needs to be run in order to ensure precise and recent data on direkteruter.html.</li>
-      <li>`tsconfig.json` - Configuration file for the TypeScript compiler</li>
-      <li>`jquery.min.js` - Minified jQuery.</li>
-      <li`>node_modules`, `package-lock.json`, and `package.json` - NPM dependencies</li>
+      <li><code>common.ts</code> - This is all the code that is reused on the different pages, and handles among other things linking to the common stylesheet and favicons, as well as generating header and footer.</li>
+      <li><code>hjem.ts</code>, <code>om.ts</code>, <code>transport.ts</code> - Only handle translation of the corresponding webpage to english.</li>
+      <li><code>flyselskap.ts</code> - Handles both translation and main content generation. The content generation is from the object 'airlines'.</li>
+      <li><code>direkteruter.ts</code> - Handles main static content generation and translation just like flyselskap.ts, but also fetches data from outXML.xml to present in the #departures div.</li>
+      <li><code>donwloadXML.ps1</code> and <code>outXML.xml</code> - A PowerShell script to download raw data from Avinor and its output file. downloadXML.ps1 needs to be run in order to ensure precise and recent data on direkteruter.html.</li>
+      <li><code>tsconfig.json</code> - Configuration file for the TypeScript compiler</li>
+      <li><code>jquery.min.js</code> - Minified jQuery.</li>
+      <li<code>>node_modules</code>, <code>package-lock.json</code>, and <code>package.json</code> - NPM dependencies</li>
     </ul>
   </li>
-  <li>`stylesheets` - contains all stylesheets for either common features (e.g. header and footer) or page specific features (such as departure boards, cards on hjem.html, etc.)</li>
+  <li><code>stylesheets</code> - contains all stylesheets for either common features (e.g. header and footer) or page specific features (such as departure boards, cards on hjem.html, etc.)</li>
 </ul>
 All the html files (except index.html) link to:
 <ul>
-  <li>`jquery.min.js`</li>
-  <li>`common.js`</li>
-  <li>`common.css`</li>
-  <li>`[page name].js`</li>
-  <li>`[page name].css`</li>
+  <li><code>jquery.min.js</code></li>
+  <li><code>common.js</code></li>
+  <li><code>common.css</code></li>
+  <li><code>[page name].js</code></li>
+  <li><code>[page name].css</code></li>
 </ul>
 
 ### Built With
@@ -82,12 +82,12 @@ All the html files (except index.html) link to:
   <li>Download the "Live Preview" extension to VSCode, or in any other way host the website on localhost. This is to make sure that your browser's CORS/CORB policy does not affect the local XML file with data for direkteruter.html.</li>
   <li>In order to run the website, do the following:
     <ol>
-      <li>Open the folder containing `src` in PowerShell, e.g. `C:\Users\myname\Documents\gardermoen-website-it1`. Then run `.\src\scripts\downloadXML.ps1`. Keep the script running for as long as you plan to use the website, to ensure updated information on direkteruter.html.</li>
-      <li>Go to wherever you hosted the website. If you use the VSCode extension "Live Preview", it will probably be on `<a href='http://127.0.0.1:3000/'>127.0.0.1:3000</a>`. Then navigate to any HTML file.</li>
+      <li>Open the folder containing <code>src</code> in PowerShell, e.g. <code>C:\Users\myname\Documents\gardermoen-website-it1</code>. Then run <code>.\src\scripts\downloadXML.ps1</code>. Keep the script running for as long as you plan to use the website, to ensure updated information on direkteruter.html.</li>
+      <li>Go to wherever you hosted the website. If you use the VSCode extension "Live Preview", it will probably be on <code><a href='http://127.0.0.1:3000/'>127.0.0.1:3000</a></code>. Then navigate to any HTML file.</li>
     </ol>
   </li>
 </ol>
-If you want to make any changes to the scripts, do not touch the `.js` files but instead make the changes in the TypeScript files before running the command `tsc` in the scripts folder from the terminal. The reason for not touching the .`js` files is that all those changes will be reverted as soon as you compile the `.ts` files.
+If you want to make any changes to the scripts, do not touch the <code>.js</code> files but instead make the changes in the TypeScript files before running the command <code>tsc</code> in the scripts folder from the terminal. The reason for not touching the <code>.js</code> files is that all those changes will be reverted as soon as you compile the <code>.ts</code> files.
 <hr>
 
 ## Roadmap
@@ -102,7 +102,7 @@ See the [open issues](https://github.com/norway-yv/gardermoen-website-it1/issues
 <hr>
 
 ## License
-Distributed under the MIT License. See `LICENSE.txt` for more information. 
+Distributed under the MIT License. See <code>LICENSE.txt</code> for more information. 
 <hr>
 
 ## Contact
