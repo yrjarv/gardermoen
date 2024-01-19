@@ -55,7 +55,7 @@ The src folder contains 5 HTML documents with content, a redirecting index.html 
       <li><code>donwloadXML.ps1</code> and <code>outXML.xml</code> - A PowerShell script to download raw data from Avinor and its output file. downloadXML.ps1 needs to be run in order to ensure precise and recent data on direkteruter.html.</li>
       <li><code>tsconfig.json</code> - Configuration file for the TypeScript compiler</li>
       <li><code>jquery.min.js</code> - Minified jQuery.</li>
-      <li<code>>node_modules</code>, <code>package-lock.json</code>, and <code>package.json</code> - NPM dependencies</li>
+      <li><code>node_modules</code>, <code>package-lock.json</code>, and <code>package.json</code> - NPM dependencies</li>
     </ul>
   </li>
   <li><code>stylesheets</code> - contains all stylesheets for either common features (e.g. header and footer) or page specific features (such as departure boards, cards on hjem.html, etc.)</li>
@@ -98,7 +98,7 @@ If you want to make any changes to the scripts, do not touch the <code>.js</code
 - [x] Flyselskap
 - [x] About us
 
-See the [open issues](https://github.com/norway-yv/gardermoen-website-it1/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/yrjarv/gardermoen-website-it1/issues) for a full list of proposed features (and known issues).
 <hr>
 
 ## License
@@ -106,7 +106,7 @@ Distributed under the MIT License. See <code>LICENSE.txt</code> for more informa
 <hr>
 
 ## Contact
-Project Link: [https://github.com/norway-yv/gardermoen-website-it1](https://github.com/norway-yv/gardermoen-website-it1)
+Project Link: [https://github.com/yrjarv/gardermoen-website-it1](https://github.com/yrjarv/gardermoen-website-it1)
 <hr>
 
 
