@@ -1,3 +1,5 @@
+Disclaimer: When developing this project, many bad choices were made - such as requring manual recompilation of TS files before running the website, and using a PowerShell (`.ps1`) script to download data from Avinor's API. This project was developed when I was just learning about TypeScript and APIs, so I didn't really know any better way to do it.
+
 <a name="readme-top"></a>
 <!-- PROJECT LOGO -->
 <br />
